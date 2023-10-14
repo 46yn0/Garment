@@ -5,13 +5,10 @@
 <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
 <div class="tweets-container">
     <% if user_signed_in? %>
-    <div class="absolute_test">
-    <%= link_to "My Page", user_path(current_user.id) %>
-    </div>
     <% end %>
 </div>  
   <div class="post">
-    <%= link_to "新規投稿へ", new_tweet_path %>
+  
   <% @tweets.each do |t| %>
 
     <%= image_tag t.user.image_url, size: "250x200" if t.user.image? %>
@@ -49,8 +46,5 @@
         <%= button_to "削除する", tweet_path(t.id), method: :delete %>  
     <% end %>
   <% end %>
-  </div>
-  <div class="sindan">
-  <%= link_to "診断", perfumes_path %>
   </div>
 </div>

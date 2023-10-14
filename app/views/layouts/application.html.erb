@@ -9,41 +9,18 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     </head>
-
   <body>
- <header>
- <% if params[:controller] == 'tweets' && params[:action] == 'index' %>
-  
+  <header>
+  <h1>Garment</h1>
   <div class="header-list">
-  <h1>Garment</h1>
-  
-   <ul>
-    <% if user_signed_in? %>
-     <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-    <% else %>
-     <li><%= link_to "新規登録", new_user_registration_path %></li>
-     <li><%= link_to "ログイン", new_user_session_path %></li>
-     <% end %>
-   </ul>
-   
+  <ul>
+    <li><%= link_to "Home", tweets_path %></li>
+    <li><%= link_to "My Page",  user_path(current_user.id) %></li>
+    <li><%= link_to "新規投稿", new_tweet_path %></li>
+    <li><%= link_to "診断", perfumes_path  %></li>
+  </ul>
   </div>
-<% else %>
-  
-  <div class="header-list2">
-  <h1>Garment</h1>
-  
-   <ul>
-    <% if user_signed_in? %>
-     <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-    <% else %>
-     <li><%= link_to "新規登録", new_user_registration_path %></li>
-     <li><%= link_to "ログイン", new_user_session_path %></li>
-    <% end %>
-   </ul>
-   
-  </div>
-  <% end %>
- </header>
+</header>
  <main>
   <%= yield %>
  </main>
