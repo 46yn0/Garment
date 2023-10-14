@@ -1,0 +1,54 @@
+<div class="picture">
+ <image src="../../../assets/perfumes.jpg" class="perfumes">
+  <div class="absolute_test2">
+   <h1>コーディネート診断</h1>
+   <%= form_for(@perfume, class: 'form-horizontal', role: 'form') do |f| %>
+   <div class="container-sindan">
+    <div class="row">
+        <div class="col-12">
+            <p>Question1. 今の季節は？</p>
+        </div>
+        <div class="col-6">
+            <p><%= f.check_box :question, {multiple: true}, "1", nil %>春</p>
+
+        </div>
+        <div class="col-6">
+            <p><%= f.check_box :question, {multiple: true}, "2", nil %>夏</p>
+        </div>
+        <div class="col-6">
+            <p><%= f.check_box :question, {multiple: true}, "3", nil %>秋</p>
+        </div>
+        <div class="col-6">
+            <p><%= f.check_box :question, {multiple: true}, "4", nil %>冬</p>
+        </div>
+
+        <div class="col-12">
+            <p>Question2. どんな系統を着たい？</p>
+        </div>
+        <div class="col-6">
+            <p><%= f.check_box :question, {multiple: true}, "1", nil %>かわいい・きれいめ</p>
+        </div>
+        <div class="col-6">
+            <p><%= f.check_box :question, {multiple: true}, "2", nil %>カジュアル</p>
+        </div>
+        <div class="col-6">
+            <p><%= f.check_box :question, {multiple: true}, "3", nil %>かっこいい</p>
+        </div>
+
+        <div class="col-12">
+            <p>Question3. 今日の気分は？</p>
+        </div>
+        <div class="col-6">
+            <p><%= f.check_box :question, {multiple: true}, "1", nil %>モノクロ</p>
+        </div>
+        <div class="col-6">
+            <p><%= f.check_box :question, {multiple: true}, "2", nil %>カラー</p>
+        </div>
+
+    </div>
+    <div class="sindanbotan">
+        <%= f.submit "診断結果" %>
+    </div>
+   <% end %>
+  </div>
+</div>
