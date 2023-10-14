@@ -33,10 +33,10 @@ ActiveRecord::Schema.define(version: 2023_10_10_144711) do
 
   create_table "perfumes", force: :cascade do |t|
     t.string "question"
-    t.string "question2"
-    t.string "question3"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "question2"
+    t.string "question3"
   end
 
   create_table "tweets", force: :cascade do |t|
